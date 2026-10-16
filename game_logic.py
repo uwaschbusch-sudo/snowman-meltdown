@@ -39,11 +39,7 @@ def play_game():
         display_game_state(mistakes, secret_word, guessed_letters)
 
         # Check if all letters of the secret word have been guessed
-        won = True
-        for letter in secret_word:
-            if letter not in guessed_letters:
-                won = False
-                break
+        won = all(letter in guessed_letters for letter in secret_word)
         if won:
             break
 
@@ -72,13 +68,23 @@ def play_game():
     # Final display and end message
     display_game_state(mistakes, secret_word, guessed_letters)
 
-    # Win / Loss check
     won = all(letter in guessed_letters for letter in secret_word)
     if won:
         print("Congratulations! You saved the snowman!")
     else:
+        print(f"The secret word was: {secret_word}")
         print("Oh no! The snowman completely melted! Game over.")
 
 
+def main():
+    """Main controller to handle gameplay and replay option."""
+    while True:
+        play_game()
+        replay = input("\nDo you want to play again? (y/n): ").lower()
+        if replay != 'y':
+            print("Thanks for playing Snowman Meltdown!")
+            break
+
+
 if __name__ == "__main__":
-    play_game()
+    main()

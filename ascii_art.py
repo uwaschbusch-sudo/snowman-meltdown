@@ -1,6 +1,6 @@
 # ascii_art.py
 
-# Snowman ASCII Art stages
+# Expanded Snowman ASCII Art stages
 STAGES = [
     # Stage 0: Full snowman
     """
@@ -10,20 +10,35 @@ STAGES = [
     ( : ) 
     ( : ) 
     """,
-    # Stage 1: Bottom part starts melting
+    # Stage 1: Hat slips or middle starts melting
+    """
+     ___  
+    /___\\ 
+    (o o) 
+    ( : ) 
+    (   ) 
+    """,
+    # Stage 2: Bottom part starts melting away
     """
      ___  
     /___\\ 
     (o o) 
     ( : ) 
     """,
-    # Stage 2: Only the head remains
+    # Stage 3: Body shrinking
+    """
+     ___  
+    /___\\ 
+    (o o) 
+    (   ) 
+    """,
+    # Stage 4: Only the head remains
     """
      ___  
     /___\\ 
     (o o) 
     """,
-    # Stage 3: Snowman completely melted
+    # Stage 5: Snowman completely melted
     """
      ___  
     /___\\ 
